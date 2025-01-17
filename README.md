@@ -1,3 +1,14 @@
+## 4
+
+```js
+const arr = [1, 2, 3];
+arr.length = 10;
+
+console.log(arr);
+```
+
+
+
 ## 5
 
 ```js
