@@ -107,7 +107,7 @@ greet();
       }
   }
 
-const counter = makeKounter();
+const counter = makeFunctionCounter();
 counter();
 counter();
 ```
