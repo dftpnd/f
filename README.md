@@ -58,7 +58,7 @@ greet();
 
 ## 10. Что выведет в консоль (запускаем в браузере)?
 
-```
+```js
    console.log(typeof NaN);
 ```
 
@@ -72,7 +72,7 @@ greet();
 
 ## 12. Что выведет в консоль (запускаем в браузере)?
 
-```
+```js
    let arr = [10, 20, 30];
    arr.length = 2;
    console.log(arr)
@@ -87,10 +87,47 @@ greet();
 — [10, 20, undefined]
 
 
-## 13
+## 13.  Что выведет в консоль (запускаем в браузере)?
 
-## 14
+```js
+  console.log(typeof null)
+  console.log(typeof undefined)
+  console.log(null === undefined)
+```
 
-## 15
 
-## 16
+## 14. Что выведет в консоль (запускаем в браузере)?
+
+```js
+  makeFunctionCounter(){
+      let count = 0;
+      return function(){
+         count++;
+         console.log(count)
+      }
+  }
+
+const counter = makeKounter();
+counter();
+counter();
+```
+
+
+## 15. Какой метод JSON используется для преобразования обьекта в строку?
+
+— JSON.parse()
+
+— JSON.convert()
+
+— JSON.objectToString()
+
+— JSON.stringify()
+
+
+## 16. Что выведет в консоль (запускаем в браузере)?
+
+
+```js
+console.log(typeof typeof 1)
+```
+
