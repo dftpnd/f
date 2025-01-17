@@ -99,13 +99,13 @@ greet();
 ## 14. Что выведет в консоль (запускаем в браузере)?
 
 ```js
-  makeFunctionCounter(){
-      let count = 0;
-      return function(){
-         count++;
-         console.log(count)
-      }
-  }
+function makeFunctionCounter() {
+    let count = 0;
+    return function () {
+        count++;
+        console.log(count)
+    }
+}
 
 const counter = makeFunctionCounter();
 counter();
