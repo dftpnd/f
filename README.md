@@ -1,6 +1,5 @@
 # 5
 
-
 ```js
 const makePromise = () => {
    return new Promise((resolve, reject)=> {
@@ -12,17 +11,16 @@ makePromise().then(console.log).catch(console.error)
 ```
 
 
-# 6
 
-Что такое обьект Promise в JavaScript
+# 6. Что такое обьект Promise в JavaScript
 
 1. Средство для работы с асинхронным кодом
 2. Способ работы синхронным кодом
 3. Обьект для управление потоком сводок
 4. Тип данных в JavaScript
 
-# 7
-что выведет консоль (запускаем в браузере)?:
+
+# 7. Что выведет консоль (запускаем в браузере)?:
 
 ```js
 const user = {
@@ -33,9 +31,19 @@ const user = {
 }
 const greet = user.greet;
 greet();
-  
 ```
-# 8
+
+
+
+# 8. Что выведет в консоль (запускаем в браузере)?
+
+```js
+   const arr = [1, 2, 3];
+   const [first, ...rest] = array;
+   
+   console.log(first, rest);
+```
+
 
 # 9
 
