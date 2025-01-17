@@ -38,7 +38,7 @@ greet();
 # 8. Что выведет в консоль (запускаем в браузере)?
 
 ```js
-   const arr = [1, 2, 3];
+   const array = [1, 2, 3];
    const [first, ...rest] = array;
    
    console.log(first, rest);
