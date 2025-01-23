@@ -142,3 +142,22 @@ counter();
 console.log(typeof typeof 1)
 ```
 
+## 17. Что выведет в консоль (запускаем в браузере)?
+
+
+```js
+(function questen() {
+    const p = promise.reject();
+
+    p
+        .then(() => { console.log('5') })
+        .catch(() => { console.log('6') })
+        .then(() => { console.log('7') })
+
+    p
+        .catch(() => { console.log('10') })
+        .then(() => { console.log('11') })
+        .catch(() => { console.log('12') })
+})()
+```
+
