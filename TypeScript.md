@@ -1,11 +1,5 @@
 # Utility Types
 
-```ts
-type Partial<Type> = {
-  [P in keyof Type]?: Type[P];
-};
-```
-
 
 ```ts
 type Partial<Type> = {
