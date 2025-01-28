@@ -33,3 +33,23 @@ type Omit<Type, K extends keyof any> = {
 }
 ```
 
+
+
+# Conditional type
+
+```ts
+type status  = 'fail' | 'success' | null | undefined;
+
+type ValidationStatuses<T> = T extends string ? T : never;
+
+type status  ValidationStatuses<status>
+
+```
+
+
+
+
+
+
+
+
