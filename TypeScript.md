@@ -48,6 +48,29 @@ type status  ValidationStatuses<status>
 
 
 
+# Infer
+
+```ts
+type MyReturnType<T extends (...args: any[])=> any> = T extends
+  (...args: any[])=> infer Return
+  ? Return
+  : never
+
+type MyParameters<T extends (...args: any[])=> any> = T extends
+  (...args: infer Args)=> any
+  ? Args
+  : never
+
+function Sum(a:number, b:number){
+  return a + b;
+}
+
+type TestMyReturnType = MyReturnType<typeof Sum>
+type TestMyParameters = MyParameters<typeof Sum>
+```
+
+
+
 
 
 
