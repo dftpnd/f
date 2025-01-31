@@ -105,7 +105,71 @@ type B1 = ExtractType<B>
 ```
 
 
+# Infer 3
 
+```ts
+type Token<T> = {
+  optional: false
+  token: T
+}
 
+type TokenOptional<T> = {
+  optional: true
+  token: T
+}
+
+type TokenType<T> = TokenOptional<T> | Token<T>
+
+type ExtractType<T> = T extends TokenOptional<infer K>
+  ? K | undefined
+  : T extends Token<infer R>
+    ? R
+    : unknown
+
+type Question1<T extends Record<string, TokenType<unknown>>> = {
+  [PropKey in keyof T]: T[PropKey]['optional'] extends true ? 'da' : 'net'
+}
+
+type Question2<T extends Record<string, TokenType<unknown>>> = {
+  [PropKey in keyof T]: ExtractType<T[PropKey]>
+}
+
+type Question3<T extends Record<string, TokenType<any>>> = {
+  [PropKey in keyof T as Exclude<
+    PropKey,
+    T[PropKey]['optional'] extends true ? PropKey : never
+  >]: ExtractType<T[PropKey]>
+}
+
+type Question4<T extends Record<string, TokenType<any>>> = {
+  [PropKey in keyof T as Exclude<
+    PropKey,
+    T[PropKey]['optional'] extends true ? PropKey : never
+  >]: ExtractType<T[PropKey]>
+} & {
+  [PropKey in keyof T as Exclude<
+    PropKey,
+    T[PropKey]['optional'] extends true ? never : PropKey
+  >]?: ExtractType<T[PropKey]>
+}
+
+type SomeType = {
+  very: string
+  cool: number
+}
+
+type Tokens = {
+  a: Token<SomeType>
+  b: TokenOptional<SomeType>
+  c: Token<SomeType>
+  d: TokenOptional<SomeType>
+}
+
+type Q1 = Question1<Tokens>
+type Q2 = Question2<Tokens>
+type Q3 = Question3<Tokens>
+type Q4 = Question4<Tokens>
+
+```
 
 
