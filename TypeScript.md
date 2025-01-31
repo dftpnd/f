@@ -71,6 +71,39 @@ type TestMyParameters = MyParameters<typeof Sum>
 
 
 
+# Infer 2
+
+```ts
+type Token<T> = {
+  optional: false
+  token: T
+}
+
+type TokenOptional<T> = {
+  optional: true
+  token: T
+}
+
+export type TokenType<T> = TokenOptional<T> | Token<T>
+
+export type ExtractType<T> = T extends TokenOptional<infer K>
+  ? K | undefined
+  : T extends Token<infer R>
+    ? R
+    : unknown
+
+type SomeType = {
+  very: string
+  cool: number
+}
+
+type A = Token<SomeType>
+type B = TokenOptional<SomeType>
+
+type A1 = ExtractType<A>
+type B1 = ExtractType<B>
+```
+
 
 
 
