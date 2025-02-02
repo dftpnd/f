@@ -71,7 +71,7 @@ type TestMyParameters = MyParameters<typeof Sum>
 
 
 
-# mapped types 1
+# Infer 2
 
 ```ts
 type Token<T> = {
@@ -105,7 +105,7 @@ type B1 = ExtractType<B>
 ```
 
 
-# mapped types 2
+# Mapped types
 
 ```ts
 type Token<T> = {
