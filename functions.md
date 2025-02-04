@@ -34,7 +34,7 @@ Array.prototype.filter = function (callback) {
 }
 ```
 
-# filter debounce
+# debounce
 
 ```ts
 function debounce(func, timeout = 300){
